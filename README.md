@@ -1,2 +1,2 @@
 # Unikoom
-Unikoom
+Unikoom mini project

@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      dialect: org.hibernate.dialect.PostgreSQL9Dialect
+      show_sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    platform: POSTGRESQL
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: root
+  liquibase:
+    change-log: classpath:db/liquibase-ora.xml
