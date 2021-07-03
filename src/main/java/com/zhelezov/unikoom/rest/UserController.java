@@ -30,20 +30,20 @@ public class UserController {
     @GetMapping
     public List<UserShortDto> getAllUsers() {
         return userService.getAll().stream()
-                .map(userMapper::userToUserShortDto)
+                .map(userMapper::toUserShortDto)
                 .collect(Collectors.toList());
     }
 
     @GetMapping("{id}")
-    public UserDto getUserById(@PathVariable("id") Long id) {
-        return userMapper.userToUserDto(userService.getById(id));
+    public UserDto getUserById(@PathVariable("id") Long userId) {
+        return userMapper.toDto(userService.getById(userId));
     }
 
     @PostMapping
     public UserDto saveUser(@Valid @RequestBody UserDto userDto) {
-        User user = userMapper.userDtoToUser(userDto);
+        User user = userMapper.toEntity(userDto);
         User saved = userService.save(user);
-        return userMapper.userToUserDto(saved);
+        return userMapper.toDto(saved);
     }
 
 }

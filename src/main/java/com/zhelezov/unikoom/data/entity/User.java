@@ -1,5 +1,6 @@
 package com.zhelezov.unikoom.data.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -16,11 +17,11 @@ import javax.persistence.Table;
 import java.time.LocalDate;
 
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Entity
 @Table(name = "USERS")
 public class User {
-    @NonNull
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID", nullable = false, unique = true)
